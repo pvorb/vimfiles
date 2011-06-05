@@ -1,9 +1,10 @@
 vimfiles README
 ===============
 
-If you are on Windows, clone this into `~\vimfiles\`. Then make a symbolic link
-`~/_vimrc -> ~/vimfiles/_vimrc`.
-If you are on Unix, clone this into `~/.vim/` and make a symbolic link `~/.vimrc
--> ~/.vim/_vimrc`.
+* If you are on Windows, clone this into `%USERPROFILE%\vimfiles\`. Then make a
+  symbolic link `%USERPROFILE%\_vimrc -> %USERPROFILE%\vimfiles\_vimrc`. Then
+  run `mkdir %USERPROFILE%\vim\tmp`.
+* If you are on Unix, clone this into `~/.vim/` and make a symbolic link
+  `~/.vimrc -> ~/.vim/_vimrc`. Then run `mkdir ~/.vim/tmp`.
 
 Now vim should use the configuration file.

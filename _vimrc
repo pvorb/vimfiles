@@ -31,7 +31,7 @@ endtry
 set autoread
 
 " Set backup behavior
-set backupdir=~/.vim/tmp
+set backupdir=~/vimfiles/tmp
 set noswapfile
 
 " With a map leader it's possible to do extra key combinations

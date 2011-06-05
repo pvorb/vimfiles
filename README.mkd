@@ -1,0 +1,9 @@
+vimfiles README
+===============
+
+If you are on Windows, clone this into `~\vimfiles\`. Then make a symbolic link
+`~/_vimrc -> ~/vimfiles/_vimrc`.
+If you are on Unix, clone this into `~/.vim/` and make a symbolic link `~/.vimrc
+-> ~/.vim/_vimrc`.
+
+Now vim should use the configuration file.

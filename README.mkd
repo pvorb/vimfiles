@@ -5,6 +5,7 @@ vimfiles README
   symbolic link `%USERPROFILE%\_vimrc -> %USERPROFILE%\vimfiles\_vimrc`. Then
   run `mkdir %USERPROFILE%\vim\tmp`.
 * If you are on Unix, clone this into `~/.vim/` and make a symbolic link
-  `~/.vimrc -> ~/.vim/_vimrc`. Then run `mkdir ~/.vim/tmp`.
+  `~/.vimrc -> ~/.vim/_vimrc`. Then run `mkdir ~/.vim/tmp`. There might be some
+  errors. Please [report](https://github.com/pvorb/vimfiles/issues) them.
 
 Now vim should use the configuration file.

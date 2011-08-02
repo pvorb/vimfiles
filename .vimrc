@@ -1,7 +1,7 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Modified version of <http://amix.dk/vim/vimrc.html> "
 "                                                     "
-" Author: Paul Vorbach <http://genitis.org>           "
+" Author: Paul Vorbach <http://vorb.de>               "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """""""""""
@@ -23,7 +23,8 @@ set enc=utf8
 
 " Try to add English spell checking
 try
-	lang en_US
+	set spell
+	set spelllang=en_us
 catch
 endtry
 
@@ -31,7 +32,7 @@ endtry
 set autoread
 
 " Set backup behavior
-set backupdir=~/vimfiles/tmp
+set backupdir=~/.vim/tmp
 set noswapfile
 
 " With a map leader it's possible to do extra key combinations
@@ -42,14 +43,10 @@ let g:mapleader = ","
 " Fast saving
 nmap <leader>w :w!<cr>
 " Fast editing of the _vimrc
-map <leader>v :e! ~/_vimrc<cr>
-" CD to source directory
-map <leader>d :cd /dev/src/<cr>
-" toggle :set list
-nmap <leader>l :set list!<cr>
+map <leader>v :e! ~/.vimrc<cr>
 
 " When vimrc is edited, reload it
-autocmd! bufwritepost vimrc source ~/_vimrc
+autocmd! bufwritepost vimrc source ~/.vimrc
 
 """"""""""""""""""
 " User interface "
@@ -90,7 +87,7 @@ set statusline=[%n]\ [%f]\ %w%y%r%m[%{&fileformat}][%{&fileencoding}]\ %=\ %l/%L
 syntax enable " Enable syntax highlighting
 
 if has('gui_running')
-	colorscheme brookstream
+	colorscheme darkbone
 
 	" Set window size
    set columns=92
@@ -103,7 +100,7 @@ if has('gui_running')
 	set t_Co=256
 
 	" Set background
-	set background=light
+	set background=dark
 
 	" Hide mouse in insertion mode
 	set mousehide
@@ -115,10 +112,10 @@ if has('gui_running')
 	" Line numbers
 	set number
 	set numberwidth=6
-	highlight LineNr guifg=#888888 guibg=#EEEEEE
+	highlight LineNr guifg=#333333 guibg=#080808
 
 	set colorcolumn=+1
-	highlight colorcolumn guibg=#EEEEEE
+	highlight colorcolumn guibg=#121212
 else
 	set background=dark
 endif

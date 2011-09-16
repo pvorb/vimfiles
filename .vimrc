@@ -23,8 +23,8 @@ set enc=utf8
 
 " Try to add English spell checking
 try
-	set spell
-	set spelllang=en_us
+  set spell
+  set spelllang=en_us
 catch
 endtry
 
@@ -87,37 +87,37 @@ set statusline=[%n]\ [%f]\ %w%y%r%m[%{&fileformat}][%{&fileencoding}]\ %=\ %l/%L
 syntax enable " Enable syntax highlighting
 
 if has('gui_running')
-	colorscheme darkbone
+  colorscheme darkbone
 
-	" Set window size
-   set columns=92
-	set lines=50
+  " Set window size
+  set columns=92
+  set lines=50
 
-	" Set window position
-	winpos 0 0
+  " Set window position
+  winpos 0 0
 
-	" Set number of colors
-	set t_Co=256
+  " Set number of colors
+  set t_Co=256
 
-	" Set background
-	set background=dark
+  " Set background
+  set background=dark
 
-	" Hide mouse in insertion mode
-	set mousehide
+  " Hide mouse in insertion mode
+  set mousehide
 
-	" Font
-	set guifont=DejaVu_Sans_Mono:h9
-	set linespace=2
+  " Font
+  set guifont=DejaVu_Sans_Mono:h9
+  set linespace=2
 
-	" Line numbers
-	set number
-	set numberwidth=6
-	highlight LineNr guifg=#333333 guibg=#080808
+  " Line numbers
+  set number
+  set numberwidth=6
+  highlight LineNr guifg=#333333 guibg=#080808
 
-	set colorcolumn=+1
-	highlight colorcolumn guibg=#121212
+  set colorcolumn=+1
+  highlight colorcolumn guibg=#121212
 else
-	set background=dark
+  set background=dark
 endif
 
 """"""""""""""""""""""
@@ -125,10 +125,12 @@ endif
 """"""""""""""""""""""
 
 " Set tab width
-set noexpandtab
-set shiftwidth=3
-set tabstop=3
-set smarttab
+"set noexpandtab
+set expandtab
+set shiftwidth=2
+set softtabstop=2
+"set tabstop=2
+"set smarttab
 
 " Wrap lines that are too long for the window size.
 set lbr
@@ -151,28 +153,28 @@ vnoremap <silent> gv :call VisualSearch('gv')<cr>
 map <leader>g : vimgrep // **/*.<left><left><left><left><left><left><left>
 
 function! CmdLine(str)
-   exe "menu Foo.Bar :" . a:str
-   emenu Foo
+  exe "menu Foo.Bar :" . a:str
+  emenu Foo
 endfunction
 
 " From an idea by Michael Naumann
 function! VisualSearch(direction) range
-   let l:saved_reg = @"
-   execute "normal! vgvy"
+  let l:saved_reg = @"
+  execute "normal! vgvy"
 
-   let l:pattern = escape(@", '\\/.*$^~[]')
-   let l:pattern = substitute(l:pattern, "\n$", "", "")
+  let l:pattern = escape(@", '\\/.*$^~[]')
+  let l:pattern = substitute(l:pattern, "\n$", "", "")
 
-   if a:direction == 'b'
-      execute "normal ?" . l:pattern . "^M"
-   elseif a:direction == 'gv'
-      call CmdLine("vimgrep " . '/'. l:pattern . '/' . ' **/*.')
-   elseif a:direction == 'f'
-      execute "normal /" . l:pattern . "^M"
-   endif
+  if a:direction == 'b'
+    execute "normal ?" . l:pattern . "^M"
+  elseif a:direction == 'gv'
+    call CmdLine("vimgrep " . '/'. l:pattern . '/' . ' **/*.')
+  elseif a:direction == 'f'
+    execute "normal /" . l:pattern . "^M"
+  endif
 
-   let @/ = l:pattern
-   let @" = l:saved_reg
+  let @/ = l:pattern
+  let @" = l:saved_reg
 endfunction
 
 """"""""""""""""
@@ -204,36 +206,36 @@ cmap ½ $
 
 
 func! Cwd()
-   let cwd = getcwd()
-   return "e " . cwd
+  let cwd = getcwd()
+  return "e " . cwd
 endfunc
 
 func! DeleteTillSlash()
-   let g:cmd = getcmdline()
-   if MySys() == "linux" || MySys() == "mac"
-      let g:cmd_edited = substitute(g:cmd, "\\(.*\[/\]\\).*", "\\1", "")
-   else
-      let g:cmd_edited = substitute(g:cmd, "\\(.*\[\\\\]\\).*", "\\1", "")
-   endif
-   if g:cmd == g:cmd_edited
-      if MySys() == "linux" || MySys() == "mac"
-         let g:cmd_edited = substitute(g:cmd, "\\(.*\[/\]\\).*/", "\\1", "")
-      else
-         let g:cmd_edited = substitute(g:cmd, "\\(.*\[\\\\\]\\).*\[\\\\\]", "\\1", "")
-      endif
-   endif
-   return g:cmd_edited
+  let g:cmd = getcmdline()
+  if MySys() == "linux" || MySys() == "mac"
+    let g:cmd_edited = substitute(g:cmd, "\\(.*\[/\]\\).*", "\\1", "")
+  else
+    let g:cmd_edited = substitute(g:cmd, "\\(.*\[\\\\]\\).*", "\\1", "")
+  endif
+  if g:cmd == g:cmd_edited
+    if MySys() == "linux" || MySys() == "mac"
+      let g:cmd_edited = substitute(g:cmd, "\\(.*\[/\]\\).*/", "\\1", "")
+    else
+      let g:cmd_edited = substitute(g:cmd, "\\(.*\[\\\\\]\\).*\[\\\\\]", "\\1", "")
+    endif
+  endif
+  return g:cmd_edited
 endfunc
 
 func! CurrentFileDir(cmd)
-   return a:cmd . " " . expand("%:p:h") . "/"
+  return a:cmd . " " . expand("%:p:h") . "/"
 endfunc
 
 " Delete trailing white space
 func! DeleteTrailingWS()
-   exe "normal mz"
-   %s/\s\+$//ge
-   exe "normal `z"
+  exe "normal mz"
+  %s/\s\+$//ge
+  exe "normal `z"
 endfunc
 autocmd BufWrite * :call DeleteTrailingWS()
 
@@ -248,7 +250,6 @@ set guitablabel=%t
 """"""""""""""
 
 if has("autocmd")
-	" Set automatic filetype detection to "on"
-	filetype on
+  " Set automatic filetype detection to "on"
+  filetype on
 endif
-

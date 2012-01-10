@@ -248,3 +248,4 @@ endif
 autocmd BufEnter *.json set filetype=javascript
 autocmd BufEnter *.ejs set filetype=html
 autocmd BufEnter *.txt set filetype=markdown
+autocmd BufEnter *.md set filetype=markdown

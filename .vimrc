@@ -8,6 +8,8 @@
 " General "
 """""""""""
 
+:behave mswin
+
 set nocp " Who cares about vi?
 
 " Sets the history size
@@ -20,13 +22,6 @@ filetype indent on
 " Default file types
 set ffs=unix,dos,mac
 set enc=utf8
-
-" Try to add English spell checking
-try
-  set spell
-  set spelllang=en_us
-catch
-endtry
 
 " Set to auto read when a file is changed from the outside
 set autoread
@@ -79,7 +74,7 @@ set tm=500
 
 " Statusline
 set laststatus=2
-set statusline=[%n]\ [%f]\ %w%y%r%m[%{&fileformat}][%{&fileencoding}]\ %=\ %l/%L,%-5c\ %P\
+set statusline=[%n]\ %f\ %w%y%r%m[%{&fileformat}][%{&fileencoding}]\ %=\ %l/%L,%-5c\ %P\
 
 """"""""""""""""""""
 " Colors and fonts "
@@ -87,7 +82,6 @@ set statusline=[%n]\ [%f]\ %w%y%r%m[%{&fileformat}][%{&fileencoding}]\ %=\ %l/%L
 syntax enable " Enable syntax highlighting
 
 if has('gui_running')
-  colorscheme darkbone
 
   " Set window size
   set columns=92
@@ -99,9 +93,6 @@ if has('gui_running')
   " Set number of colors
   set t_Co=256
 
-  " Set background
-  set background=dark
-
   " Hide mouse in insertion mode
   set mousehide
 
@@ -112,10 +103,10 @@ if has('gui_running')
   " Line numbers
   set number
   set numberwidth=6
-  highlight LineNr guifg=#333333 guibg=#080808
+  highlight LineNr guifg=#666666 guibg=#f5f5f5
 
   set colorcolumn=+1
-  highlight colorcolumn guibg=#121212
+  highlight colorcolumn guibg=#cccccc
 else
   set background=dark
 endif
@@ -253,3 +244,7 @@ if has("autocmd")
   " Set automatic filetype detection to "on"
   filetype on
 endif
+
+autocmd BufEnter *.json set filetype=javascript
+autocmd BufEnter *.ejs set filetype=html
+autocmd BufEnter *.txt set filetype=markdown

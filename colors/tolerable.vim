@@ -13,7 +13,7 @@ if exists("syntax_on")
 endif
 let g:colors_name="tolerable"
 
-hi Cursor       guifg=white guibg=darkgreen
+hi Cursor       guifg=white guibg=black
 
 hi Normal       gui=none guifg=black guibg=white
 hi NonText      gui=none guifg=orange guibg=white
@@ -34,7 +34,7 @@ hi VertSplit    gui=none guibg=#333333 guifg=white
 hi Visual       gui=none guibg=green guifg=black
 hi Search       gui=none guibg=yellow
 hi Directory    gui=none guifg=darkblue
-hi WarningMsg   gui=none guifg=red 
+hi WarningMsg   gui=none guifg=red
 hi Error        gui=none guifg=white guibg=red
 hi Todo         gui=none guifg=black guibg=yellow
 

@@ -82,7 +82,7 @@ set statusline=[%n]\ %f\ %w%y%r%m[%{&fileformat}][%{&fileencoding}]\ %=\ %l/%L,%
 syntax enable " Enable syntax highlighting
 
 if has('gui_running')
-  colors tolerable
+  colors vorbach
 
   " Set window size
   set columns=92

@@ -82,6 +82,7 @@ set statusline=[%n]\ %f\ %w%y%r%m[%{&fileformat}][%{&fileencoding}]\ %=\ %l/%L,%
 syntax enable " Enable syntax highlighting
 
 if has('gui_running')
+  colors thegoodluck
 
   " Set window size
   set columns=92
@@ -104,9 +105,11 @@ if has('gui_running')
   set number
   set numberwidth=6
   highlight LineNr guifg=#666666 guibg=#f5f5f5
+"  highlight LineNr guifg=#000000 guibg=#555555
 
   set colorcolumn=+1
   highlight colorcolumn guibg=#cccccc
+"  highlight colorcolumn guibg=#000000
 else
   set background=dark
 endif

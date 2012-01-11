@@ -17,16 +17,16 @@ let g:colors_name="vorbach"
 hi Cursor       guifg=white guibg=black
 
 hi Normal       gui=none guifg=black guibg=white
-hi NonText      gui=none guifg=orange guibg=white
+hi NonText      gui=none guifg=darkcyan guibg=white
 
 hi Statement    gui=bold guifg=blue
 hi Special      gui=none guifg=orange
 hi Constant     gui=none guifg=red
-hi Comment      gui=none guifg=#555555
+hi Comment      gui=italic guifg=#333333
 hi Preproc      gui=bold guifg=darkgreen
 hi Type         gui=none guifg=darkmagenta
 hi Identifier   gui=bold guifg=darkcyan
-hi Title        gui=none guifg=black
+hi Title        gui=bold guifg=black
 
 hi StatusLine   gui=none guibg=#333333 guifg=white
 hi StatusLineNC gui=none guibg=#333333 guifg=white
@@ -40,5 +40,4 @@ hi Error        gui=none guifg=white guibg=red
 hi Todo         gui=none guifg=black guibg=yellow
 
 hi MoreMsg      gui=none
-hi ModeMsg      gui=none
-
+hi ModeMsg      gui=bold

@@ -20,7 +20,7 @@ hi Normal       gui=none guifg=black guibg=white
 hi NonText      gui=none guifg=darkcyan guibg=white
 
 hi Statement    gui=bold guifg=blue
-hi Special      gui=none guifg=orange
+hi Special      gui=none guifg=orangered
 hi Constant     gui=none guifg=red
 hi Comment      gui=italic guifg=#333333
 hi Preproc      gui=bold guifg=darkgreen

@@ -254,3 +254,4 @@ autocmd BufEnter *.txt set filetype=markdown
 autocmd BufEnter *.md set filetype=markdown
 autocmd BufEnter *.xaml set filetype=xml
 autocmd BufEnter *.less set filetype=css
+autocmd BufEnter *.sbt set filetype=scala

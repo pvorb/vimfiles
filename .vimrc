@@ -83,3 +83,12 @@ if has("autocmd")
   autocmd BufEnter *.less set filetype=css
   autocmd BufEnter *.sbt set filetype=scala
 endif
+
+"" Automatically delete trailing whitespace
+func! DeleteTrailingWhitespace()
+  execute "normal mz"
+  %s/\s\+$//ge
+  exe "normal `z"
+endfunc
+autocmd BufWrite * :call DeleteTrailingWhitespace()
+

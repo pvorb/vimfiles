@@ -21,7 +21,6 @@ set incsearch                   " incremental searching
 set ignorecase                  " searches are case insensitive ...
 set smartcase                   " unless they contain at least one capital
 
-
 "" Highlighting
 set showmatch                   " highlight matching brackets
 
@@ -68,3 +67,19 @@ set smartindent
 
 set noswapfile                  " disable swap file
 set nobackup                    " disable backups
+
+"" File types
+if has("autocmd")
+  " Set automatic filetype detection to "on"
+  filetype on
+
+  autocmd BufEnter *.json set filetype=javascript
+  autocmd BufEnter *.ejs set filetype=html
+  autocmd BufEnter *.txt set filetype=pdc
+  autocmd BufEnter *.mkd set filetype=pdc
+  autocmd BufEnter *.md set filetype=pdc
+  autocmd BufEnter *.markdown set filetype=pdc
+  autocmd BufEnter *.xaml set filetype=xml
+  autocmd BufEnter *.less set filetype=css
+  autocmd BufEnter *.sbt set filetype=scala
+endif

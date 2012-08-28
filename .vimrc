@@ -28,9 +28,6 @@ set showmatch                   " highlight matching brackets
 "" Appearance
 set ruler                       " show current position
 
-set cursorline                  " show a line at the current cursor position
-set cursorcolumn
-
 set noerrorbells
 set novisualbell
 
@@ -49,6 +46,9 @@ if has('gui_running')
   set lines=50
 
   set number                    " show line numbers
+  set cursorline                  " show a line at the current cursor position
+  set cursorcolumn
+
 
   set t_Co=256
   set linespace=3               " use spacing between lines

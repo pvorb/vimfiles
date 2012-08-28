@@ -1,6 +1,6 @@
 " Vim color file
 " Maintainer:   Paul Vorbach
-" Last Change:  2011 Jan 11
+" Last Change:  2012 Aug 28
 " Email:        <paul@vorb.de>
 
 " Color settings inspired by BBEdit for Mac OS, plus I liked
@@ -41,3 +41,8 @@ hi Todo         gui=none guifg=black guibg=yellow
 
 hi MoreMsg      gui=none
 hi ModeMsg      gui=bold
+
+hi CursorLine   guibg=#f5f5f5
+hi CursorColumn guibg=#f9f9f9
+hi LineNr       guifg=#bbbbbb
+hi ColorColumn  guibg=#dddddd

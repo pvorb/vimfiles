@@ -40,18 +40,18 @@ endif
 if has('gui_running')
   colors vorbach
 
-  winpos 683 0                    " position new windows in the top left corner
+  winpos 683 0                  " position new windows in the top left corner
   set columns=92
   set lines=50
 
   set number                    " show line numbers
-  set cursorline                  " show a line at the current cursor position
+  set cursorline                " show a line at the current cursor position
   set cursorcolumn
 
 
   set t_Co=256
   set linespace=3               " use spacing between lines
-  
+
   set colorcolumn=+1
 
   set mousehide                 " hide mouse in insert mode
@@ -88,7 +88,7 @@ endif
 func! DeleteTrailingWhitespace()
   execute "normal mz"
   %s/\s\+$//ge
-  exe "normal `z"
+  execute "normal `z"
 endfunc
 autocmd BufWrite * :call DeleteTrailingWhitespace()
 

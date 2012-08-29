@@ -42,7 +42,7 @@ hi Todo         gui=none guifg=black guibg=yellow
 hi MoreMsg      gui=none
 hi ModeMsg      gui=bold
 
-hi CursorLine   guibg=#f5f5f5
-hi CursorColumn guibg=#f9f9f9
+hi CursorLine   guibg=#eeeeee
+hi CursorColumn guibg=#eeeeee
 hi LineNr       guifg=#bbbbbb
 hi ColorColumn  guibg=#dddddd
